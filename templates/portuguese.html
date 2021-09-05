@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyExtract-português</title>
+    <style media="screen">
+      body{
+        color:white;
+      }
+    
+      .buttons button{
+	      height: 50px;
+	      width: 150px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffb3b3;
+        background: #82ccdd;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid #82ccdd;
+        border-radius: 25px;
+        transition: .4s;
+      }
+      .buttons .btn2{
+	      margin-left: 25px;
+        background: #cc0000;
+      }
+      .buttons button:hover{
+	      background: #cc0000;
+      }
+      input[type=button], input[type=submit], input[type=file],.btn2 {
+        background-color: #82ccdd;
+        border: none;
+        color: black;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+    
+  </head>
+  <body style="background-color:black;">
+    <IMG STYLE="position:absolute; TOP:35px; RIGHT:100px; WIDTH:100px; HEIGHT:100px" SRC="/static/css/images/bg.jpg">
+    <form
+      method="POST"
+      ,
+      action="http://localhost:5000/extract"
+      ,
+      enctype="multipart/form-data"
+    >
+    <div class="wrapper">
+			<div class="center" >
+      <h1>Upload handwritten images or documents in português</h1>
+			<div class="buttons">
+      <input type="file", name="filename" /></div>
+			<button class="btn2">Extract Text</button>
+      <hr>
+      <h2>KEYWORDS IN UPLOADED DOCUMENT</h2>
+		</div>
+		</div>
+    </form>
+    <div class="container"></div>
+    <script>
+      let dataFromApi = JSON.parse({{jsonData|tojson}})
+      document.querySelector(".container").innerHTML = dataFromApi.text
+      </script>
+    <form action="http://localhost:5000/upload" method="post" enctype="multipart/form-data">
+      <hr>
+      <p>Do you want to upload it to AWS S3?</p>
+        <input type="file" name="file" value="file">
+        <br>
+      <input type="submit" name="upload" value="Upload to S3" class="btn-success">
+      </form>
+      {{msg}}
+  </body>
+  </html>
+    

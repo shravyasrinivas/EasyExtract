@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Easy Extract</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  </head>
+  <body>
+    <IMG STYLE="position:absolute; TOP:35px; LEFT:170px; WIDTH:100px; HEIGHT:100px" SRC="/static/css/images/bg.jpg">
+    <div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">SELECT LANGUAGE</h1>
+        <div class="border"></div>
+        <div class="services-container">
+        <a href="{{ url_for('english')}}">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-language"></i>
+            </a>
+            </div>
+            <div class="service-title">English</div>
+            <div class="service-desc">
+              Choose this language to upload images written in "ENGLISH"
+            </div>
+          </div>
+          <a href="{{ url_for('espanol')}}">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-language"></i>
+			  </a>
+			 </div>
+            <div class="service-title">Español</div>
+            <div class="service-desc">
+              Elija este idioma para subir imágenes escritas en "ESPAÑOL"
+            </div>
+          </div>
+          <a href="{{ url_for('italiana')}}">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-language"></i>
+			  </a>
+			  </div>
+            <div class="service-title">Italiano</div>
+            <div class="service-desc">
+              Scegli questa lingua per caricare le immagini scritte in "ITALIANO"
+            </div>
+          </div>
+
+          <a href="{{ url_for('german')}}">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-language"></i>
+			  </a>
+			  </div>
+            <div class="service-title">Deutsch</div>
+            <div class="service-desc">
+              Wählen Sie diese Sprache, um in "DEUTSCH" geschriebene Bilder hochzuladen
+            </div>
+          </div>
+
+          <a href="{{ url_for('french')}}">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-language"></i>
+			  </a>
+			  </div>
+            <div class="service-title">Français</div>
+            <div class="service-desc">
+              Choisissez cette langue pour télécharger des images écrites en "FRANÇAIS"
+            </div>
+          </div>
+          <a href="{{ url_for('portugese')}}">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-language"></i>
+			  </a>
+			  </div>
+            <div class="service-title">Portugais</div>
+            <div class="service-desc">
+              Escolha este idioma para fazer upload de imagens escritas em "português"
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
